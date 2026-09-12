@@ -100,7 +100,12 @@ function render(songs) {
       <div class="card">
         <div class="info">
 			<span>
-				<strong style="color: red;">${escapeHtml(s.ten)}</strong>
+				<span style="text-transform: uppercase;">
+					${escapeHtml(s.ten).replace(
+						/(\(Book\d+\)\s*Page\s*\d+)/i,
+						'<strong style="color: red;">$1</strong>'
+				)}
+				</span>				
 					—
 				<span style="color: blue;">${escapeHtml(s.tacgia)}</span>
 			</span>
